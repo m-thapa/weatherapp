@@ -30,13 +30,13 @@ export default function TempAndDetails() {
       id: 1,
       Icon: GiSunrise,
       title: "Sunrise",
-      value: "4:20AM",
+      value: "04:20 AM",
     },
     {
       id: 2,
       Icon: GiSunset,
       title: "Sunset",
-      value: "9:20PM",
+      value: "09:20 PM",
     },
     {
       id: 3,
@@ -72,18 +72,24 @@ export default function TempAndDetails() {
               key={id}
               className="flex font-light text-sm items-center justify-center"
             >
-              <Icon size={15} className="mr-1" />
-              {title}: <span className="font-medium ml-1">{value}</span>
+              <Icon size={18} className="mr-1" />
+              <p className="font-medium ml-1">
+                {`${title}:`}
+                <span className="font-medium ml-1">{value}</span>
+              </p>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="flex flex-row items-center justify-center space-x-10 text-sm py-3">
+      <div className="flex justify-between items-center text-sm py-3">
         {horizontalDetails.map(({ id, Icon, title, value }) => (
-          <div key={id} className="flex flex-row items-center">
-            <Icon size={30} className="mr-1" />
-            {title}: <span className="font-medium ml-1">{value}</span>
+          <div key={id} className="flex items-center">
+            <Icon size={30} />
+            <p className="font-light ml-1">
+              {`${title}:`}
+              <span className="font-medium ml-1">{value}</span>
+            </p>
           </div>
         ))}
       </div>
