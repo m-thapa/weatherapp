@@ -10,7 +10,7 @@ function TimeAndLocation() {
       </div>
 
       <div className="flex items-center justify-center my-3">
-        <p className="text-3xl font-medium">Berline, DE</p>
+        <p className="text-3xl font-medium">Berlin, DE</p>
       </div>
     </div>
   );
