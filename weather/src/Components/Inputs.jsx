@@ -9,7 +9,7 @@ function Inputs() {
           <input
             type="text"
             placeholder="Search...."
-            className="text-xl font-light p-2 w-full shadow-xl focus:outline-none capitalize placeholder:lowercase"
+            className="text-xl text-black font-light p-2 w-full shadow-xl focus:outline-none capitalize placeholder:lowercase"
           ></input>
 
           <MagnifyingGlassIcon
