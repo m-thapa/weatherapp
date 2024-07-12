@@ -1,6 +1,7 @@
 import { DateTime } from "luxon";
 
-const API_KEY = "7a4942fc5ce70a0083f35849635dd27b";
+const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
+
 const BASE_URL = "https://api.openweathermap.org/data/2.5/";
 
 const getWeatherData = (infoType, searchParams) => {
@@ -90,7 +91,7 @@ const getFormattedWeatherData = async (searchParams) => {
     lat,
     lon,
     units: searchParams.units,
-  }).then((d) => formatForecastWeather(dt, timezone, d.list)); 
+  }).then((d) => formatForecastWeather(dt, timezone, d.list));
   return { ...formattedCurrentWeather, ...formattedForecastWeather };
 };
 
