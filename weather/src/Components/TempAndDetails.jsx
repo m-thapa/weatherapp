@@ -17,6 +17,7 @@ export default function TempAndDetails({
     humidity,
     feels_like,
   },
+  units,
 }) {
   const verticalDetails = [
     {
@@ -35,7 +36,7 @@ export default function TempAndDetails({
       id: 3,
       Icon: FiWind,
       title: "Wind",
-      value: `${speed.toFixed()} km/h`
+      value: `${speed.toFixed()} ${units === "metric" ? "km/h" : "m/s"}`,
     },
   ];
   const horizontalDetails = [
@@ -72,11 +73,7 @@ export default function TempAndDetails({
       </div>
 
       <div className="flex flex-row items-center justify-between py-3">
-        <img
-          src={icon}
-          alt="weather icon"
-          className="w-20"
-        />
+        <img src={icon} alt="weather icon" className="w-20" />
         <p className="text-5xl">{`${temp.toFixed()}`}°</p>
 
         <div className="flex flex-col space-y-3 items-start">
