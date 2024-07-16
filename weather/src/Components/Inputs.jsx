@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import React, { useState } from "react";
 import { MagnifyingGlassIcon, MapPinIcon } from "@heroicons/react/24/solid";
 
 function Inputs({ setQuery, setUnits }) {
@@ -17,6 +17,12 @@ function Inputs({ setQuery, setUnits }) {
     }
   };
 
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      handleSearchClick();
+    }
+  };
+
   return (
     <>
       <div className="flex flex-row justify-center my-6">
@@ -27,6 +33,7 @@ function Inputs({ setQuery, setUnits }) {
             type="text"
             placeholder="Search...."
             className="text-xl text-black font-light p-2 w-full shadow-xl focus:outline-none capitalize placeholder:lowercase"
+            onKeyPress={handleKeyPress}
           ></input>
 
           <MagnifyingGlassIcon
@@ -42,15 +49,19 @@ function Inputs({ setQuery, setUnits }) {
         </div>
 
         <div className="flex flex-row w-1/4 items-center justify-center">
-          <button name="metric" className="text-2xl font-light transition ease-out hover:scale-125"
-          onClick={() => setUnits("metric")}
+          <button
+            name="metric"
+            className="text-2xl font-light transition ease-out hover:scale-125"
+            onClick={() => setUnits("metric")}
           >
             °C
           </button>
 
-          <p className=" text-xl mx-1">|</p>
-          <button name="imperial" className="text-2xl font-light transition ease-out hover:scale-125"
-          onClick={() => setUnits("imperial")}
+          <p className="text-xl mx-1">|</p>
+          <button
+            name="imperial"
+            className="text-2xl font-light transition ease-out hover:scale-125"
+            onClick={() => setUnits("imperial")}
           >
             °F
           </button>
