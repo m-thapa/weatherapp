@@ -1,6 +1,9 @@
 # Weather App
+https://mthapa-weather.netlify.app/
 
-Welcome to the Weather App! This application provides real-time weather information for any city worldwide. Built using Vite and React, it offers a fast and responsive user experience.
+## Summary
+
+This application provides real-time weather information for any city worldwide. Built using Vite and React, it offers a fast and responsive user experience. 
 
 ## Features
 
